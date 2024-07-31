@@ -19,6 +19,19 @@ fun main(){
      * var değişkeninin set() özelliğini private yaparak val yapılabilir.
      **/
 }
+fun createName():String{
+    val name:String = "Alp"
+    return name
+}
+fun createAge():Int{
+    val age:Int = 23
+    return age
+}
+fun createIsMale():Boolean{
+    val isMale = true
+    return isMale
+}
+
 
 
 
