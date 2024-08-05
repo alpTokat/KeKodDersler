@@ -106,25 +106,93 @@ fun main() {
     } } }
 
 
+    //Obeject-Type bir array, cesitli fonksiyonlar ile primitive-type array'e dönüstürülebilir.
+
+    var charSampleArray:CharArray = arrayOf('A','L','P').toCharArray() // object-type bir array'i primitive type'e dönüştürdüm.
+    var intSampleArray:IntArray = arrayOf(1,2,3,4).toIntArray() // yukardaki ile ayni islem sadece degisken tipleri farklı.
+
+
+    /**
+     *      varargs kelimesi ile fonksiyona birden fazla parametre alabilirsiniz.
+     *      Eger ki bu vararg fonksiyonuna bir array yollanacaksa bu arrayin basina
+     *      Spread operatoru(*) katilmalidir.
+     *      Spread, Arrayin icindeki degerlerin ayrı ayrı bir degisken olarak parametre olarak kabul edilmesini saglar.
+     */
+
+    val lettersArray = arrayOf("c","d")
+    printAllStrings("a","b","c","d")
+    printAllStrings("a","b",*lettersArray,"f")
+    printAllStrings("a","b","c","d","f")
+
+
+    /**
+     *      iki degisken arasinda esitligi kontrol eden esit esittir(==).
+     *      Arraylerde iki array'in referansını kontrol eder.
+     *      Icindeki degerleri kontrol ettirmek icin contentEquals fonksiyonunu kullanmamiz gerekir.
+     */
+    val arr1 = arrayOf(1,2,3)
+    val arr2 = arrayOf(1,2,3)
+
+    if (arr1 == arr2){ // iki array farkli yerleri gosterdigi icin false doner.
+        println(true)
+    }else{
+        println(false)
+    }
+
+    val arr4 = arr1
+    val arr5 = arr1
+    if (arr4 == arr5){ // ikiside arr1 arrayini gosterdigi icin yani ayni yeri true doner
+        println(true)
+    }else{
+        println(false)
+    }
+
+    println(arr1.contentEquals(arr2))//true  Tek boyutlu arraylerde deger kontrolu
+
+    val arr7 = arrayOf(intArrayOf(1,2),intArrayOf(3,4))
+    val arr8 = arrayOf(intArrayOf(1,2),intArrayOf(3,4))
+
+    println(arr7.contentDeepEquals(arr8)) //true
+
+
+    //https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/   -> array hazır fonksiyonlar
+    /**
+     *    .sum() -> toplama islemi yapmak icin kullanilir.Sadece number typed array
+     *    .shuffle() -> random karistirma;array icindeki degerler random olarak karistirilir.
+     */
+
+    val sumArray = arrayOf(1,2,3)
+    println(sumArray.sum())
+    val shuffledArray = arrayOf(1,2,3)
+    shuffledArray.shuffle()
+    println(shuffledArray.joinToString())
+    shuffledArray.shuffle()
+    println(shuffledArray.joinToString())
+
+
+    /**
+     *      Array'leri List yada Set'e dönüstürebiliriz.
+     */
+
+    val sampleArray = arrayOf("a","b","c","c")
+    println(sampleArray.toSet()) // [a,b,c] // tekrar eden elemanlar tekrar tekrar alinmaz.
+    println(sampleArray.toList()) //[a,b,c,c]
+
+
+    /**
+     * Maplere dönüstürebilirsiniz. Ancak bunun icin array'in ozel olarak Pair<K,V> formunda olmasi lazim
+     */
+
+
+    val cities = arrayOf("Istanbul" to 34,"Ankara" to 6,"Adana" to 1)
+    println(cities.toMap())
 
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fun printAllStrings(vararg letter:String){
+    letter.forEach{
+        print(it) }
+    println()
 }
