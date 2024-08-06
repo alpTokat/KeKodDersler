@@ -54,10 +54,69 @@ fun main() {
 
     println("----------------------------------------------------------------------------------")
 
-    println(grade.compareTo(100) == -1)
-    println(grade.compareTo(100) == 1)
-    println(grade.compareTo(100) >= 0)
-    println(grade.equals(100))
-    println(grade.equals(100))
-    println(!grade.equals(100))
+    println(grade.compareTo(100) == -1) // grade < 100
+    println(grade.compareTo(100) == 1)  // grade = 100
+    println(grade.compareTo(100) >= 0)  // grade >= 100
+    println(grade.equals(100))  // grade = 100
+    println(grade.equals(100))  // grade = 100
+    println(!grade.equals(100)) // grade != 100
+
+    println("----------------------------------------------------------------------------------")
+
+    var a = 20
+    var b = 5
+    a += b // a = a + b
+    println("a+=b : " +a)
+    a-=b // a = a - b
+    println("a-=b : " +a)
+    a*=b
+    println("a*=b : " +a)
+    a/=b
+    println("a/=b : " +a)
+    a%=b
+    println("a%=b : " +a)
+
+    /*
+        a+=b    a.plusAssign(b)
+        a-=b    a.minusAssign(b)
+        a*=b    a.timesAssign(b)
+        a/=b    a.divAssign(b)
+        a%=b    a.remAssign(b)
+     */
+
+
+    println("----------------------------------------------------------------")
+
+    var numOne = 10
+    var numTwo = 5
+    var flag = true
+    println("+a :"+ +numOne)
+    println("-a :"+ -numTwo)
+    println("++a :"+ ++numOne)
+    println("a++ :" + numOne++)
+    println("a :" +numOne)
+    println("--b :"+ --numberTwo)
+    println("!flag : " + !flag)
+    println("!flag :" + flag.not())
+
+    /*
+            +a      a.unaryPlus()
+            -a      a.unaryMinus()
+            ++a     a.inc() a = a + 1
+            --a     a.dec() a = a - 1
+            !a      a.not()
+     */
+
+    println("----------------------------------------------------------------")
+
+    /**
+     *      === ifadesi isaret edilen referans tipleri kiyaslar
+     *      == ifadesi degeri karsilastirir.
+     */
+
+
+
+
+
+
 }
