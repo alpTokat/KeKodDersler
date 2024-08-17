@@ -15,7 +15,28 @@ class Turtle constructor(mFeetCount:Int=3,val mName:String="Murtle"){ //mFeetCou
 
     // class feautures(Özellikleri)
     var feetCount:Int = 4
-    val feetColor:String = "Brown"
+
+    /**
+     *      kotlinde visibility modifier olarak kullanilabilecek 4 adet keyword vardır. Public, Private, Protected, İnternal
+     *      Bu visibility modifierlar degiskenlerde sadece get ve set uzerinde degisiklik yaparlar.
+     *     public ile tanimlanmis bir degiskende get ve set fonksiyonlari bulunurken
+     *     private ile tanimlanan bir degiskende get ve set fonksiyonları bulunmaz
+     *      bir sinifin icerisinde tanimlana degiskenler aslinda property'dir.
+     *      sadece icerisindeki degerler alan kaplar.
+     *     getter ve setter fonksiyonlarina gore erisilebilirler. direk erisim yoktur.
+     *
+     * asagidaki kodun java karsiligina baktigimizda private olarak tanimlandigini goruruz.
+     */
+    var feetCountColor:String = "Brown"
+        set(value) { // arka planda tanimlamasi bu sekilde aslinda bu bir degisken degil fonksiyon.
+            field = value
+        }get() {
+            return field
+        }
+    //Asagidaki kod ise private olarak belirttiginiz icin getter and setter fonksiyonlari olmaz.
+    private var feetCountColor2:String = "Brown"
+
+
     val headCount:Int = 1
     val headColor:String = "Brown"
     val shelterColor:String = "Green"
