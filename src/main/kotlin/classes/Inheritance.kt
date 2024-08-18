@@ -42,3 +42,26 @@ fun main() {
     dog.attackToTheWolf()
     cat.attackToTheWolf()
 }
+
+
+/**
+ *      Inheritance(miras alma) android kod ornegi
+ */
+
+//open class BaseFragment(val layoutId:Int):Fragment{
+//    fun onViewCreated():View{
+//        return inflate.inflater(layoutId)
+//    }
+//
+//}
+
+// asagidaki 2 classta code simens yani kendini tekrarlayan kod oldugu icin burda miras almadan yararlanmaliyiz.
+/**class DashboardFragment:BaseFragment(R.layout.fragment_dashboard){
+
+}
+
+class ProfileFragment:BaseFragment(R.layout.fragment_profile){
+}
+ */
+
+// Sinif override edilemez. Sadece propertyler ve functionlar edilebilir.
