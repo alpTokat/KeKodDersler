@@ -1,9 +1,6 @@
 package classes.abstractclass
 
-import com.sun.jdi.request.EventRequestManager
 import jdk.jfr.Event
-import org.w3c.dom.events.EventListener
-import java.util.EventObject
 
 abstract class Human(val name:String, /*val eventManager:EventManager*/) {
 
@@ -53,13 +50,13 @@ open class Kurt(eventManager: Event, override val middleName: String):Human("Kur
     }
 }
 
-class Sivas(override val surName2: String):Turk(eventManager = asdasd, middleName = "Sivas"){ // en alt child class bütün parent ozelliklerini kullanabilir.
-    override val skinColor: String= "asdasd"
-    override fun display() {
-        TODO("Not yet implemented")
-    }
-
-}
+//class Sivas(override val surName2: String):Turk(eventManager = asdasd, middleName = "Sivas"){ // en alt child class bütün parent ozelliklerini kullanabilir.
+//    override val skinColor: String= "asdasd"
+//    override fun display() {
+//        TODO("Not yet implemented")
+//    }
+//
+//}
 
 fun main() {
 //    val human = Human("Alp") -> abstract class'in instance'i olusturulamaz diye uyarıcı verecektir.
