@@ -81,9 +81,7 @@ enum class Team(val starCount: Int) : myInterface {
 }
 
 interface myInterface {
-    fun boo() {
-
-    }
+    fun boo()
 }
 
 fun main() {
