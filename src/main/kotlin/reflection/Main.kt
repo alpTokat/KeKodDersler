@@ -25,4 +25,6 @@ fun main() {
     Account::class.memberProperties.forEach {
         println(it.name)
     }
+
+    val account2:Account= constructor.call("")
 }
