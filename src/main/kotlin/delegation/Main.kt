@@ -28,6 +28,15 @@ class DocumentPrinter(isInkPrinter: Boolean){
 }
 
 
+interface Scanner{
+    fun scan()
+}
+
+class FancyScanner:Scanner{
+    override fun scan() {
+        println("Fancy")
+    }
+}
 
 // birden fazla class oldugunda ise su sekilde yapilmaktadir.
 interface Printer2{
@@ -39,18 +48,25 @@ class InkPrinter2:Printer2{
         println("Ink")
     }
 
+
+
 }
 
 class LaserPrinter2: Printer2{
     override fun printDocument() {
         println("Laser")
     }
+
+
+
 }
 
 class MixedPrinter: Printer2{
     override fun printDocument() {
         println("Mixed")
     }
+
+
 }
 
 class DocumentPrinter2(printerType: PrinterType){
@@ -63,6 +79,7 @@ class DocumentPrinter2(printerType: PrinterType){
     fun printDocument(){
         printer.printDocument()
     }
+
 }
 
 class DocumentPrinterD(printer: Printer2):Printer2 by printer
@@ -73,7 +90,7 @@ enum class PrinterType{
 
 
 
-fun main() {
+fun main(arg: Array<String>) {
     // normalde class icindeki function su sekilde kullanılmaktadir.
     val printer = InkPrinter()
     printer.printDocument()
